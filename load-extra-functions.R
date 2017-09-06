@@ -16,8 +16,12 @@ scripts <- c("graphical_methods.R",
              "import_frogs.R",
              "prevalence.R",
              "compute_niche.R")
+<<<<<<< HEAD
 
 urls <- paste0("https://raw.githubusercontent.com/HPCBio/phyloseq-extended/master/R/", scripts)
+=======
+urls <- paste0("https://raw.githubusercontent.com/HPCBio/phyloseq-extended/master/", scripts)
+>>>>>>> modify URL for HPCBio
 
 for (url in urls) {
   source(url)
