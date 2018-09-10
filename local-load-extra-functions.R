@@ -18,7 +18,7 @@ scripts <- c("graphical_methods.R",
              "compute_niche.R")
 
 script.dir <- dirname(sys.frame(1)$ofile)
-urls <- file.path(script.dir, scripts)
+urls <- file.path(file.path(script.dir, 'R'), scripts)
 
 for (url in urls) {
   source(url)
