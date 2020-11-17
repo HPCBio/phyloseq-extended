@@ -442,6 +442,8 @@ ggformat <- function(physeq, taxaRank1 = "Phylum", taxaSet1 = "Proteobacteria",
     tax <- as(tax_table(physeq), "matrix")
     tax[is.na(tax)] <- "Unknown"
     tax[tax %in% c("", "unclassified", "Unclassified", "NA")] <- "Unknown"
+    tax[grepl("uncultured", tax, ignore.case = TRUE)] <- "Unknown"
+    tax[grepl("metagenome", tax, ignore.case = TRUE)] <- "Unknown"
     tax <- data.frame(OTU = rownames(tax), tax)
     mdf <- merge(mdf, tax, by.x = "OTU")
     ## Aggregate by taxaRank2
